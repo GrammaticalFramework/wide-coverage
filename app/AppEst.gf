@@ -1,4 +1,4 @@
---# -path=.:../../lib/src/chunk:../../lib/src/translator:../../lib/src/estonian:../phrasebook/gfos:alltenses
+--# -path=.:../chunk:../translator:../../lib/src/estonian:../phrasebook/gfos:alltenses
 
 concrete AppEst of App = 
 
