@@ -1,7 +1,7 @@
 --# -path=.:../abstract
 
 concrete ExtensionsBul of Extensions = 
-  CatBul ** open ResBul, (E = ExtraBul), Prelude, SyntaxBul in {
+  CatBul ** open ResBul, (E = ExtraBul), (X = ExtendBul), Prelude, SyntaxBul in {
 
 flags 
   coding = utf8 ;
@@ -34,9 +34,24 @@ lin
   PassAgentVPSlash = E.PassAgentVPSlash ;
 
   EmptyRelSlash = E.EmptyRelSlash ;
+  
+  CompoundN  = X.CompoundN  ;
+  CompoundAP = X.CompoundAP ;
+  GerundCN   = X.GerundCN   ; 
+  GerundNP   = X.GerundNP   ;
+  GerundAdv  = X.GerundAdv  ; 
+  PresPartAP = X.PresPartAP ;
+  PastPartAP = X.PastPartAP ; 
+  PastPartAgentAP = X.PastPartAgentAP ; 
+  ByVP = X.ByVP ; 
+  InOrderToVP = X.InOrderToVP ; 
+  
+  PositAdVAdj = X.PositAdVAdj ; 
 
 lin
-  CompoundN noun cn = {
+
+{-
+    CompoundN noun cn = {
     s = \\nf => (noun.rel ! nform2aform nf cn.g) ++ (cn.s ! (indefNForm nf)) ;
     rel = \\af => (noun.rel ! af) ++ (cn.rel ! af) ; ---- is this correct? AR 29/5/2014
     g = cn.g
@@ -64,6 +79,7 @@ lin
     {s = vp.ad.s ++
          vp.s ! Imperf ! VGerund ++
          vp.compl ! {gn=GSg Neut; p=P3}} ;
+
 
   PresPartAP vp =
     let ap : AForm => Str
@@ -93,6 +109,8 @@ lin
                         "от" ++ np.s ! RObj Acc
     in {s = ap; adv = ap ! ASg Neut Indef; isPre = True} ;
 
+
+
   ByVP vp =
     {s = vp.ad.s ++
          vp.s ! Imperf ! VGerund ++
@@ -101,11 +119,13 @@ lin
   InOrderToVP vp =
     {s = "за" ++ daComplex Simul Pos (vp**{vtype=VMedial Acc}) ! Imperf ! {gn=GSg Neut; p=P3}};
 
+  PositAdVAdj a = {s = a.adv} ;
+  
+-}
+
   WithoutVP vp =
     {s = "без" ++ daComplex Simul Pos (vp**{vtype=VMedial Acc}) ! Imperf ! {gn=GSg Neut; p=P3}};
 
-  PositAdVAdj a = {s = a.adv} ;
-  
   that_RP = {
     s = whichRP
   } ;
@@ -179,7 +199,8 @@ lin
          compl2 = vp.compl;
          vtype  = vp.vtype;
          p      = vp.p;
-         c2     = {s=""; c=Acc}
+         c2     = {s=""; c=Acc};
+	 isSimple = vp.isSimple; 
        } ;
 
   ApposNP np1 np2 = {
@@ -189,7 +210,8 @@ lin
   } ;
 
   UttAdV adv = adv;
-  AdAdV = cc2 ;
+--  AdAdV = cc2 ;
+  AdAdV = X.AdAdV ; 
   
   DirectComplVS t np vs utt = 
     mkS (lin Adv (optCommaSS utt)) (mkS t positivePol (mkCl np (lin V vs))) ;
