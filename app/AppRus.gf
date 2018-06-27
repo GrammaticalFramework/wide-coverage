@@ -1,4 +1,4 @@
---# -path=.:../../lib/src/chunk:../../lib/src/translator:../phrasebook/gfos
+--# -path=.:../chunk:../translator:../phrasebook/gfos
 
 concrete AppRus of App = 
 

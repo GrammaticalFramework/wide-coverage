@@ -1,7 +1,7 @@
 --# -path=.:../abstract
 
 concrete ExtensionsDut of Extensions = 
-  CatDut ** open ResDut, ParadigmsDut, SyntaxDut, (E = ExtraDut), ExtendDut, (G = GrammarDut), Prelude in {
+  CatDut ** open ResDut, ParadigmsDut, SyntaxDut, (E = ExtraDut), (X = ExtendDut), (G = GrammarDut), Prelude in {
 
 flags literal=Symb ; coding = utf8 ;
 
@@ -95,7 +95,7 @@ lin
     s = "door" ++ useInfVP False vp ! agrP3 Sg ----
     } ;
 
-  PastPartAP = ExtendDut.PastPartAP ;
+  PastPartAP = X.PastPartAP ;
   
   PresPartAP vp = { --# notpresent
     s = \\agr,af => let aForm = case vp.isHeavy of { --# notpresent
@@ -107,7 +107,7 @@ lin
 
   PastPartAgentAP vp np = 
     let agent = (SyntaxDut.mkAdv (mkPrep "door") (lin NP np)).s ;
-        ap = ExtendDut.PastPartAP vp ;
+        ap = X.PastPartAP vp ;
     in ap ** { s = \\agr,af => ap.s ! agr ! af ++ agent } ;
 
 {-  

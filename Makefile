@@ -7,25 +7,44 @@ Translate: TranslateEng TranslateBul TranslateEus TranslateChi TranslateGer Tran
 TranslateEng: TranslateEng.pgf
 TranslateBul: TranslateBul.pgf
 TranslateChi: TranslateChi.pgf
-TranslateGer: TranslateGer.pgf
+TranslateCat: TranslateCat.pgf
 TranslateDut: TranslateDut.pgf
-TranslateSwe: TranslateSwe.pgf
-TranslateHin: TranslateHin.pgf
+TranslateEst: TranslateEst.pgf
+TranslateEus: TranslateEus.pgf
 TranslateFin: TranslateFin.pgf
 TranslateFre: TranslateFre.pgf
+TranslateGer: TranslateGer.pgf
+TranslateHin: TranslateHin.pgf
 TranslateIta: TranslateIta.pgf
+TranslateJpn: TranslateJpn.pgf
+TranslateRus: TranslateRus.pgf
 TranslateSpa: TranslateSpa.pgf
-TranslateEus: TranslateEus.pgf
+TranslateSwe: TranslateSwe.pgf
+TranslateTha: TranslateTha.pgf
+TranslateUrd: TranslateUrd.pgf
+
+all: Translate $(TRANSLATE15) $(TranslateEngSwe).pgf  $(TranslateEngSweFin) $(TranslateEngSweBul)
+
 
 S=-s
-GFMKT=mkdir -p ../translator && gf $S -make -literal=PN,Symb -probs=$(TPROBSFILE) -gfo-dir ../translator
+TGFO=dist/build/translator
+GFMKT=mkdir -p $(TGFO) && gf $S -make -literal=PN,Symb -probs=$(TPROBSFILE) -gfo-dir $(TGFO)
 
 TRANSLATE8=TranslateEng.pgf TranslateBul.pgf TranslateChi.pgf TranslateGer.pgf TranslateSwe.pgf TranslateHin.pgf TranslateFin.pgf TranslateFre.pgf
-TRANSLATE10=TranslateEng.pgf TranslateBul.pgf TranslateChi.pgf TranslateGer.pgf TranslateSwe.pgf TranslateHin.pgf TranslateFin.pgf TranslateFre.pgf TranslateIta.pgf TranslateSpa.pgf
+
+TRANSLATE10=$(TRANSLATE8) TranslateIta.pgf TranslateSpa.pgf
 
 TRANSLATE11=$(TRANSLATE10) TranslateDut.pgf
 
-TRANSLATE15=$(TRANSLATE10) TranslateDut.pgf TranslateCat.pgf TranslateEst.pgf TranslateTha.pgf TranslateJpn.pgf
+TRANSLATE15=$(TRANSLATE11) TranslateCat.pgf TranslateEst.pgf TranslateTha.pgf TranslateJpn.pgf
+
+# Without dependencies:
+Translate8:
+	$(GFMKT) -name=Translate8 $(TRANSLATE8) +RTS -K32M
+
+# With dependencies:
+Translate8.pgf: $(TRANSLATE8)
+	$(GFMKT) -name=Translate8 $(TRANSLATE8) +RTS -K32M
 
 # Without dependencies:
 Translate10:
@@ -44,13 +63,10 @@ Translate11.pgf: $(TRANSLATE11)
 	$(GFMKT) -name=Translate11 $(TRANSLATE11) +RTS -K32M
 
 # Without dependencies:
-Translate8:
-	$(GFMKT) -name=Translate8 $(TRANSLATE8) +RTS -K32M
+Translate15:
+	$(GFMKT) -name=Translate15 $(TRANSLATE15) +RTS -K32M
 
 # With dependencies:
-Translate8.pgf: $(TRANSLATE8)
-	$(GFMKT) -name=Translate8 $(TRANSLATE8) +RTS -K32M
-
 Translate15.pgf: $(TRANSLATE15)
 	$(GFMKT) -name=Translate15 $(TRANSLATE15) +RTS -K32M
 
@@ -71,13 +87,19 @@ TranslateCat.pgf:: ; $(GFMKT) -name=TranslateCat translator/TranslateCat.gf +RTS
 TranslateEst.pgf:: ; $(GFMKT) -name=TranslateEst translator/TranslateEst.gf +RTS -K64M
 TranslateTha.pgf:: ; $(GFMKT) -name=TranslateTha translator/TranslateTha.gf +RTS -K64M
 TranslateJpn.pgf:: ; $(GFMKT) -name=TranslateJpn translator/TranslateJpn.gf +RTS -K64M
+TranslateRus.pgf:: ; $(GFMKT) -name=TranslateRus translator/TranslateRus.gf 
+TranslateUrd.pgf:: ; $(GFMKT) -name=TranslateUrd translator/TranslateUrd.gf 
 
 # Selected language pairs:
+TranslateEngBul: ; $(GFMKT) -name=TranslateEngBul TranslateEng.pgf TranslateBul.pgf
+TranslateEngChi: ; $(GFMKT) -name=TranslateEngChi TranslateEng.pgf TranslateChi.pgf
 TranslateEngFin: ; $(GFMKT) -name=TranslateEngFin TranslateEng.pgf TranslateFin.pgf
 TranslateEngGer: ; $(GFMKT) -name=TranslateEngGer TranslateEng.pgf TranslateGer.pgf
 TranslateEngHin: ; $(GFMKT) -name=TranslateEngHin TranslateEng.pgf TranslateHin.pgf
-TranslateEngBul: ; $(GFMKT) -name=TranslateEngBul TranslateEng.pgf TranslateBul.pgf
-TranslateEngSpa: ; $(GFMKT) -name=TranslateEngSpa TranslateEng.pgf TranslateSpa.pgf
 TranslateEngFre: ; $(GFMKT) -name=TranslateEngFre TranslateEng.pgf TranslateFre.pgf
+TranslateEngSpa: ; $(GFMKT) -name=TranslateEngSpa TranslateEng.pgf TranslateSpa.pgf
 TranslateEngSwe: ; $(GFMKT) -name=TranslateEngSwe TranslateEng.pgf TranslateSwe.pgf
-TranslateEngChi: ; $(GFMKT) -name=TranslateEngChi TranslateEng.pgf TranslateChi.pgf
+
+# Selected language triplets
+TranslateEngSweFin: ; $(GFMKT) -name=TranslateEngSweFin TranslateEng.pgf TranslateSwe.pgf TranslateFin.pgf
+TranslateEngSweBul: ; $(GFMKT) -name=TranslateEngSweBul TranslateEng.pgf TranslateSwe.pgf TranslateBul.pgf
