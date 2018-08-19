@@ -1,4 +1,4 @@
---# -path=.:../estonian
+--# -path=.:../gflibsrc/estonian:
 concrete DictionaryEst of Dictionary = CatEst ** open ParadigmsEst,
 (D = DictEst),
 (S = StructuralEst),
