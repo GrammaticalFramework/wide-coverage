@@ -1,4 +1,4 @@
---# -path=.:../abstract
+--# -path=.:../gflibsrc/abstract
 
 concrete ExtensionsEng of Extensions = 
   CatEng ** open MorphoEng, ResEng, ParadigmsEng, (S = SentenceEng), (E = ExtraEng), SyntaxEng, Prelude in {

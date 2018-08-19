@@ -1,4 +1,4 @@
---# -path=.:../chunk:alltenses:../basque
+--# -path=.:../chunk:alltenses:../gflibsrc/basque
 
 concrete TranslateEus of Translate = 
   TenseX,

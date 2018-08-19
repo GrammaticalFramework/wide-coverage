@@ -1,4 +1,4 @@
--- -- # -path=.:../chunk:alltenses:../german
+-- -- # -path=.:../chunk:alltenses:../gflibsrc/german
 ---- edited by SS till cold_A and some in the 100 underneath
 
 concrete DictionaryGer of Dictionary = CatGer ** 

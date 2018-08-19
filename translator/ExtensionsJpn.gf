@@ -1,4 +1,4 @@
---# -path=.:../abstract
+--# -path=.:../gflibsrc/abstract
 
 concrete ExtensionsJpn of Extensions = 
   CatJpn ** open ResJpn, ParadigmsJpn, SyntaxJpn, (G = GrammarJpn), (E = ExtraJpn), Prelude in {

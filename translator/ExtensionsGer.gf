@@ -1,4 +1,4 @@
---# -path=.:../abstract
+--# -path=.:../gflibsrc/abstract
 
 concrete ExtensionsGer of Extensions = 
   CatGer ** open MorphoGer, ResGer, ParadigmsGer, SyntaxGer, (E = ExtraGer), (G = GrammarGer), Prelude in {

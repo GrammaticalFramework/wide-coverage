@@ -1,4 +1,4 @@
---# -path=.:../abstract
+--# -path=.:../gflibsrc/abstract
 
 concrete ExtensionsRus of Extensions = 
   CatRus ** open ResRus, (E = ExtraRus), Prelude, SyntaxRus in {

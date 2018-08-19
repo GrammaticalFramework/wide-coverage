@@ -1,4 +1,4 @@
---# -path=.:../abstract
+--# -path=.:../gflibsrc/abstract
 
 concrete ExtensionsTha of Extensions = 
   CatTha ** open ResTha, ParadigmsTha, SyntaxTha, (G = GrammarTha), Prelude in {
