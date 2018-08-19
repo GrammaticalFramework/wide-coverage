@@ -1,4 +1,4 @@
---# -path=.:../abstract
+--# -path=.:../gflibsrc/abstract
 
 concrete ExtensionsBul of Extensions = 
   CatBul ** open ResBul, (E = ExtraBul), (X = ExtendBul), Prelude, SyntaxBul in {

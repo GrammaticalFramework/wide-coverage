@@ -1,4 +1,4 @@
---# -path=.:../chunk:../estonian
+--# -path=.:../chunk:../gflibsrc/estonian
 
 concrete TranslateEst of Translate = 
   TenseX,

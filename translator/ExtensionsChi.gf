@@ -1,4 +1,4 @@
---# -path=.:../abstract
+--# -path=.:../gflibsrc/abstract
 
 concrete ExtensionsChi of Extensions = 
   CatChi ** open ResChi, ParadigmsChi, SyntaxChi, (G = GrammarChi), (E = ExtraChi), Prelude in {

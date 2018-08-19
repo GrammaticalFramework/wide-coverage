@@ -1,7 +1,8 @@
-concrete DictionaryBul of Dictionary = CatBul ** open MorphoBul, ResBul, (S = StructuralBul), (E = ExtraBul), ParadigmsBul, Prelude in {
-
-flags
-  coding=utf8 ;
+concrete DictionaryBul of Dictionary = 
+  CatBul 
+    ** open MorphoBul, ResBul, (S = StructuralBul), (E = ExtraBul), ParadigmsBul, Prelude in 
+{
+flags coding=utf8 ;
 
 --oper prepV2 : V -> Prep -> V2 = \v,p -> mkV2 v p ;
 oper advV : V -> Adv -> V = \v,_ -> v ; ----

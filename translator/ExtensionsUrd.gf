@@ -1,4 +1,4 @@
---# -path=.:../abstract
+--# -path=.:../gflibsrc/abstract
 
 concrete ExtensionsUrd of Extensions = 
   CatUrd ** open MorphoUrd, ResUrd, ParadigmsUrd, CommonHindustani, (E = ExtraUrd), Prelude in {

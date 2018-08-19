@@ -1,4 +1,4 @@
---# -path=.:../abstract
+--# -path=.:../gflibsrc/abstract
 
 concrete ExtensionsDut of Extensions = 
   CatDut ** open ResDut, ParadigmsDut, SyntaxDut, (E = ExtraDut), (X = ExtendDut), (G = GrammarDut), Prelude in {

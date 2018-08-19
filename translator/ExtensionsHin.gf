@@ -1,4 +1,4 @@
---# -path=.:../abstract
+--# -path=.:../gflibsrc/abstract
 
 concrete ExtensionsHin of Extensions = 
   CatHin ** open MorphoHin, ResHin, ParadigmsHin, CommonHindustani, (E = ExtraHin), Prelude in {

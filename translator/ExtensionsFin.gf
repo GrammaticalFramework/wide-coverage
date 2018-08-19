@@ -1,4 +1,4 @@
---# -path=.:../abstract
+--# -path=.:../gflibsrc/abstract
 
 concrete ExtensionsFin of Extensions = 
   CatFin ** open MorphoFin, ResFin, ParadigmsFin, SyntaxFin, (G = GrammarFin), (E = ExtraFin), StemFin, Prelude in {

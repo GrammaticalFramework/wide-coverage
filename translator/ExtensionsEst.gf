@@ -1,4 +1,4 @@
---# -path=.:../abstract
+--# -path=.:../gflibsrc/abstract
 
 concrete ExtensionsEst of Extensions = 
   CatEst ** open MorphoEst, ResEst, ParadigmsEst, SyntaxEst, (G = GrammarEst), (E = ExtraEst), Prelude in {

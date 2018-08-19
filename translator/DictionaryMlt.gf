@@ -1,4 +1,4 @@
---# -path=.:../maltese
+--# -path=.:../gflibsrc/maltese
 
 -- Maltese translation dictionary
 -- started by Aarne Ranta 2015

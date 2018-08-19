@@ -1,4 +1,4 @@
---# -path=.:../abstract
+--# -path=.:../gflibsrc/abstract
 
 concrete ExtensionsSwe of Extensions = 
   CatSwe ** open MorphoSwe, ResSwe, ParadigmsSwe, (E = ExtraSwe), (G = GrammarSwe), SyntaxSwe, CommonScand, Prelude in {

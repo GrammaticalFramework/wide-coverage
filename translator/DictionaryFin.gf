@@ -1,4 +1,4 @@
---# -path=.:../finnish/stemmed:../finnish:../abstract:../common:../finnish/kotus:../api
+--# -path=.:../gflibsrc/finnish/stemmed:../gflibsrc/finnish:../gflibsrc/abstract:../gflibsrc/common:../gflibsrc/finnish/kotus:../gflibsrc/api:
 ---- checked by AR till beginning_N in the BNC order
 concrete DictionaryFin of Dictionary = CatFin ** open ParadigmsFin,
   (S = StructuralFin),
