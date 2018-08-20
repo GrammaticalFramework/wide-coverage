@@ -1,6 +1,6 @@
 concrete DictionaryBul of Dictionary = 
   CatBul 
-    ** open MorphoBul, ResBul, (S = StructuralBul), (E = ExtraBul), ParadigmsBul, Prelude in 
+    ** open MorphoBul, ResBul, (R=ResBul), (S = StructuralBul), (E = ExtraBul), ParadigmsBul, Prelude in 
 {
 flags coding=utf8 ;
 
@@ -1859,7 +1859,7 @@ lin alveolate_A = variants {} ;
 lin alveolitis_N = mkN007 "алвеолит" ;
 lin alveolus_N = mkN041 "алвеола" ;
 lin alvine_A = variants {} ;
-lin always_AdV = ss "винаги" ;
+lin always_AdV = mkAdV "винаги" ;
 lin always_Adv = variants {} ;
 lin alyssum_N = variants {} ;
 lin amah_N = mkN041a "дойка" ;
@@ -2821,12 +2821,12 @@ lin anxiousness_N = mkN049 "тревожност" ;
 lin anyPl_Det = mkDeterminerPl "кои да са" ;
 lin anySg_Det = mkDeterminerSg "кой да е" "коя да е" "кое да е" ;
 lin any_Adv = variants {} ;
-lin anybody_NP = mkNP "някой" (GSg Masc) P3 Pos ;
+lin anybody_NP = mkNP "някой" (GSg Masc) PronP3 ;
 lin anyhow_Adv = variants {} ;
 lin anymore_Adv = variants {} ;
-lin anyone_NP = mkNP "някой" (GSg Masc) P3 Pos ;
+lin anyone_NP = mkNP "някой" (GSg Masc) PronP3 ;
 lin anyplace_Adv = variants {} ;
-lin anything_NP = mkNP "нещо" (GSg Masc) P3 Pos ;
+lin anything_NP = mkNP "нещо" (GSg Masc) PronP3 ;
 lin anyway_Adv = variants {} ;
 lin anywhere_Adv = variants {} ;
 lin aorist_N = mkN007 "арист" ; ----
@@ -19745,12 +19745,12 @@ lin evermore_Adv = {s="дори повече"} ;
 lin eversion_N = mkN071 "обръщане" ;
 lin every_Det = mkDeterminerSg "всеки" "всяка" "всяко" ;
 lin every_bit_Adv = mkAdv "също толкова";
-lin everybody_NP = mkNP "всеки" (GSg Masc) P3 Pos ;
+lin everybody_NP = mkNP "всеки" (GSg Masc) PronP3 ;
 lin everyday_A = mkA079 "ежедневен" ;
 lin everyman_N = variants {} ;
-lin everyone_NP = mkNP "всеки" (GSg Masc) P3 Pos ;
+lin everyone_NP = mkNP "всеки" (GSg Masc) PronP3 ;
 lin everyplace_Adv = variants {} ;
-lin everything_NP = mkNP "всичко" (GSg Neut) P3 Pos ;
+lin everything_NP = mkNP "всичко" (GSg Neut) PronP3 ;
 lin everywhere_Adv = ss "навсякъде" ;
 lin evesham_PN = mkPN "Ившам" Masc ;
 lin evict_V2 = dirV2 (dualV (mkV186 "изгонвам") (mkV173 "изгоня")) ; ----
@@ -28492,7 +28492,7 @@ lin increase_V2 = dirV2 (dualV (mkV186 "увеличавам") (mkV176 "увел
 lin increased_A = mkA079 "увеличен" ;
 lin increasing_A = mkA076 "увеличаващ" ;
 lin increasingly_AdA = mkAdv ("все по-"++Prelude.BIND) ;
-lin increasingly_AdV = mkAdv "все по" ;
+lin increasingly_AdV = mkAdV "все по" ;
 lin increasingly_Adv = mkAdv "все повече" ;
 lin incredibility_N = variants {mkN049 "невероятност"; mkN049 "неимоверност"; mkN049 "неправдоподобност"} ; ----
 lin incredible_A = variants {mkA079 "неимоверен"; mkA079 "баснословен"; mkA079 "неправдоподобен"} ; ----
@@ -35758,7 +35758,7 @@ lin mizen_N = mkN007 "бизан" ; ----
 lin mizzen_N = mkN007 "бизан" ; ----
 lin mizzen_mast_N = variants {} ;
 lin mizzle_V = singleV (mkV174 "ръмя") ; ----
-lin ml_N = {s,rel = \\_ => "мл"; g = AMasc NonHuman} ;
+lin ml_N = {s,rel = \\_ => "мл"; relPost = False; g = AMasc NonHuman} ;
 lin mlle_PN = mkPN "Мле" Masc ;
 lin mm_N = variants {} ;
 lin mme_PN = mkPN "Мме" Masc ;
@@ -37780,7 +37780,7 @@ lin noble_mindedness_N = variants {} ;
 lin nobleman_N = dualN (mkN014a "благородник") (mkA078 "благороднически") | dualN (mkN018 "дворянин") (mkA078 "дворянски") ;
 lin noblesse_N = mkN054 "благородство" ;
 lin noblesse_oblige_N = variants {} ;
-lin nobody_NP = mkNP "никой" (GSg Masc) P3 Neg ;
+lin nobody_NP = mkNP "никой" (GSg Masc) (NounP3 Neg) ;
 lin nocent_A = variants {} ;
 lin nociceptive_A = mkA079 "ноцисептивен" ;
 lin noctambulist_N = variants {} ;
@@ -38255,7 +38255,7 @@ lin notepaper_N = mkN041a "бланка" ;
 lin noteworthy_A = variants {mkA079 "забележителен"; mkA079 "завиден"} ; ----
 lin nothing_Adv = variants {} ;
 lin nothing_N = variants {mkN072 "небитие"; mkN041 "нула"} ; ----
-lin nothing_NP = mkNP "нищо" (GSg Neut) P3 Neg ;
+lin nothing_NP = mkNP "нищо" (GSg Neut) (NounP3 Neg) ;
 lin nothingness_N = variants {mkN049 "баналност"; mkN047 "дреболия"; mkN049 "маловажност"; mkN072 "небитие"; mkN049 "незначителност"; mkN049 "нищожност"} ; ----
 lin nothings_N = mkN041a "безсмислица" ;
 lin nothosaur_N = variants {} ;
@@ -53005,18 +53005,18 @@ lin sombreness_N = mkN049 "мрачност" ; ----
 lin sombrero_N = mkN054 "сомбреро" ;
 lin some_Det = mkDeterminerSg "малко" "малко" "малко" ;
 lin some_Quant = mkQuant "някой" "някоя" "някое" "някои" ;
-lin somebody_NP = mkNP "някой" (GSg Masc) P3 Pos ;
+lin somebody_NP = mkNP "някой" (GSg Masc) PronP3 ;
 lin someday_Adv = mkAdv "някой ден" ;
 lin somehow_AdV = mkAdV "някак си" ;
 lin somehow_Adv = mkAdv "някак си" ;
-lin someone_NP = mkNP "някой" (GSg Masc) P3 Pos ;
+lin someone_NP = mkNP "някой" (GSg Masc) PronP3 ;
 lin someplace_Adv = mkAdv "някъде" ;
 lin somercotes_PN = mkPN "Сомеркотес" Masc ;
 lin somersault_N = mkN071 "премятане" ; ----
 lin somersault_V = variants {} ;
 lin somerset_PN = mkPN "Самърсет" Masc ;
 lin somesthesia_N = variants {} ;
-lin something_NP = mkNP "нещо" (GSg Neut) P3 Pos ;
+lin something_NP = mkNP "нещо" (GSg Neut) PronP3 ;
 lin sometime_Adv = mkAdv "някога" ;
 lin sometimes_Adv = mkAdv "понякога" ;
 lin someway_Adv = mkAdv "някак си" ;
@@ -53056,8 +53056,8 @@ lin sonority_N = variants {mkN049 "звучност"; mkN049 "звънливос
 lin sonorous_A = variants {mkA079 "звучен"; mkA076 "звънлив"; mkA079 "пълнозвучен"; mkA079 "сонорен"} ; ----
 lin sonsy_A = variants {} ;
 lin soochow_PN = mkPN "Соочоу" Masc ;
-lin soon_AdV = {s="скоро"} ;
-lin soon_Adv = {s="скоро"} ;
+lin soon_AdV = mkAdV "скоро" ;
+lin soon_Adv = mkAdv "скоро" ;
 lin sooner_Adv = {s="по - скоро"} ;
 lin soonest_Adv = variants {} ;
 lin soot_N = mkN041 "чернилка" ; ----
@@ -64569,7 +64569,7 @@ lin yesterday_Adv = mkAdv "вчера" ;
 lin yesterday_N = mkN041 "вчера" ;
 lin yet_1_Adv = mkAdv "все още" ;
 lin yet_2_Adv = mkAdv "все още" ;
-lin yet_AdV = mkAdv "все още" ;
+lin yet_AdV = mkAdV "все още" ;
 lin yeti_N = mkN065 "йети" ;
 lin yew_N = mkN007 "тис" ; ----
 lin yew_tree_N = variants {} ;

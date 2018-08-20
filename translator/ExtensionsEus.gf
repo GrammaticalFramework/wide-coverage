@@ -1,4 +1,4 @@
---# -path=.:../abstract:../basque
+--# -path=.:../gflibsrc/abstract:../gflibsrc/basque
 
 concrete ExtensionsEus of Extensions = 
   CatEus ** open ResEus, ParamEus, ParadigmsEus, ExtraEus, SentenceEus, Prelude in {
