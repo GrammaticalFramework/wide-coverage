@@ -32,14 +32,12 @@ import Control.Monad(forM_)
    in the next step. Everything else is irrelevant unless if you 
    are interested in Finnish.
    
-   2. 
-   
-   3. Change the variable ´train´ back to ´False´, then 
+   2. Change the variable ´train´ back to ´False´, then 
    run the classification. For example:
    
         > runghc classify.hs eng por
         
-   If you are interested in Portuguese. This will create a file
+   if you are interested in Portuguese. This will create a file
    called ´predictions.tsv´ which lists a synset and 
    a pair of eng-por candidate translation from that synset.
    If the last column in the file is ´True´ then
