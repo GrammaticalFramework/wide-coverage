@@ -25,7 +25,7 @@ main = do
   rps <- if train
            then fmap (Set.fromList . map (toReferencePair . tsv) . lines) $ readFile "data/fiwn-transls.tsv"
            else return Set.empty
-  e2f <- fmap (Map.fromList . map (toAlignmentPair . words) . lines) $ readFile "data/europarl-v7.fi-en.lemma.intersect.lex.e2f"
+  --e2f <- fmap (Map.fromList . map (toAlignmentPair . words) . lines) $ readFile "data/europarl-v7.fi-en.lemma.intersect.lex.e2f"
 
   let features = addFeatures rps wps
 
