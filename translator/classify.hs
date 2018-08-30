@@ -1,4 +1,4 @@
-import Text.EditDistance
+import Text.EditDistance -- pkg edit-distance
 import Data.List
 import qualified Data.Set as Set
 import qualified Data.Map.Strict as Map
@@ -7,42 +7,43 @@ import Data.Char
 import Data.IORef
 import Debug.Trace
 import System.Random
-import System.Random.Shuffle
+import System.Random.Shuffle -- pkg random-shuffle
 import System.Environment
-import Translit
 import Control.Monad(forM_)
 
 {- HOW TO USE IT
    ~~~~~~~~~~~~~
-   
-   You need data from the Open Multilingual WordNet for 
-   English, Finnish and the language that you are interested in.
-   The data files for each language should be stored in
-   `data/wn-data-<language code>.tab´. You also need to store the file
-   `fiwn-transls.tsv` from the Finnish WordNet in the `data` folder.
-   
+
+   You need data from the Open Multilingual WordNet for English,
+   Finnish and the language that you are interested in.  The data
+   files for each language should be stored in `data/wn-data-<language
+   code>.tab´. You also need to store the file `fiwn-transls.tsv` from
+   the Finnish WordNet in the `data` folder (you can find it in their
+   website under the relations zip file
+   http://www.ling.helsinki.fi/en/lt/research/finnwordnet/download.shtml#data).
+
    Now do the following:
-   
-   1. Change the ´train´ variable bellow to ´True´ then run 
+
+   1. Change the ´train´ variable below to ´True´ then run
    the training:
-     
+
         > runghc classify.hs eng fin
-        
-   This will create a file called ´table.csv´ which you will need
-   in the next step. Everything else is irrelevant unless if you 
+
+   This will create a file called ´table.tsv´ which you will need
+   in the next step. Everything else is irrelevant unless if you
    are interested in Finnish.
-   
-   2. Change the variable ´train´ back to ´False´, then 
+
+   2. Change the variable ´train´ back to ´False´, then
    run the classification. For example:
-   
+
         > runghc classify.hs eng por
-        
+
    if you are interested in Portuguese. This will create a file
-   called ´predictions.tsv´ which lists a synset and 
+   called ´predictions.tsv´ which lists a synset and
    a pair of eng-por candidate translation from that synset.
    If the last column in the file is ´True´ then
    the algorithm thinks that this is a good candidate.
-   
+
    If you want to bootstrap a translation dictionary from WordNet
    then select only the pairs for which the status is True.
    For good quality the output still needs human validation.
@@ -88,7 +89,7 @@ main = do
                                                     lemma2,
                                                     show c,show d,
                                                     show crank,show drank,
-                                                    show cls,show pred] 
+                                                    show cls,show pred]
                                                | (sense_id,lemma1,lemma2,c,d,crank,drank,cls,pred) <- predictions])
 
        let result0 = Map.fromListWith (+) [((cls,pred),1) | (_,_,_,_,_,_,_,cls,pred) <- predictions]
@@ -103,9 +104,9 @@ main = do
   writeFile ("result.tsv") (unlines [untsv ([show cls,show pred,show (c/(if useTenFold then 10 else 1))]) | ((cls,pred),c) <- Map.toList result])
 
 toEntries lng =
-  foldr addElem Map.empty . 
-  mapMaybe (toEntry lng . tsv) . 
-  tail . 
+  foldr addElem Map.empty .
+  mapMaybe (toEntry lng . tsv) .
+  tail .
   lines
   where
     toEntry lng [sense_id,rel,w]
@@ -133,7 +134,7 @@ toReferencePair (fis:fi:ens:en:_) = (conv ens,en,fi)
     conv s = drop 8 s ++ ['-',s !! 7]
 
 toAlignmentPair (eng:fin:_:prob:_) = ((mapEng eng,mapFin fin),read prob :: Double)
-  where 
+  where
     mapEng w =
       init w ++ ((:[]) $
       case last w of
@@ -165,7 +166,7 @@ untsv = intercalate "\t"
 addFeatures ts ps =
   let (xs,ys)   = takeSynset ps
       (cds,xs') = mapAccumL (addValues cds) (Set.empty,Set.empty) xs
-  in if null xs 
+  in if null xs
        then []
        else xs' ++ addFeatures ts ys
   where
@@ -174,7 +175,7 @@ addFeatures ts ps =
                             (ps1,ps2) = break (\p1 -> get_sense_id p1 /= sense_id) ps
                         in (p : ps1, ps2)
       where
-	    get_sense_id (sense_id,_,_,_,_) = sense_id
+            get_sense_id (sense_id,_,_,_,_) = sense_id
 
     addValues cds (cs,ds) (sense_id,lemma1,lemma2,c,d) =
       let cls = Set.member (sense_id,lemma1,lemma2) ts
@@ -203,10 +204,10 @@ tenfold gen ps =
         get_sense_id (sense_id,_,_,_,_,_,_,_) = sense_id
 
     splitData len10 zs ps =
-	  let (xs,ys) = splitAt len10 ps
-	  in if null ys
-	       then []
-	       else (concat xs,concat (zs++ys)) : splitData len10 (xs++zs) ys
+          let (xs,ys) = splitAt len10 ps
+          in if null ys
+               then []
+               else (concat xs,concat (zs++ys)) : splitData len10 (xs++zs) ys
 
 --classify :: [[Double]] -> (String,Int,String,Int,String,Int,Int,Int,Int,Bool) -> (String,Int,String,Int,String,Int,Int,Int,Int,Bool,Bool)
 {-classify tbl (sense_id,lemma_id1,lemma1,lemma_id2,lemma2,c,d,crank,drank,cls)
@@ -219,7 +220,7 @@ classify tbl ps =
       (ids,sel1) = pick1 ([],[]) xs'
       sel2       = pick2 ids xs'
       sel        = sel1++sel2
-  in if null xs 
+  in if null xs
        then []
        else map (annotate sel) xs ++ classify tbl ys
   where
@@ -228,7 +229,7 @@ classify tbl ps =
                             (ps1,ps2) = break (\p1 -> get_sense_id p1 /= sense_id) ps
                         in (p : ps1, ps2)
       where
-	    get_sense_id (sense_id,_,_,_,_,_,_,_) = sense_id
+            get_sense_id (sense_id,_,_,_,_,_,_,_) = sense_id
 
     pairProb x@(sense_id,lemma1,lemma2,c,d,crank,drank,cls) = (lemma1,lemma2,tbl !! (crank-1) !! (drank-1))
 
@@ -253,7 +254,7 @@ randomChoice g ps =
   let (xs,ys)  = takeSynset ps
       (g',xs') = mapAccumL pairProb g xs
       sel      = pick [] (sortBy descProb xs')
-  in if null xs 
+  in if null xs
        then []
        else map (annotate sel) xs ++ randomChoice g' ys
   where
@@ -262,12 +263,12 @@ randomChoice g ps =
                             (ps1,ps2) = break (\p1 -> get_sense_id p1 /= sense_id) ps
                         in (p : ps1, ps2)
       where
-	    get_sense_id (sense_id,_,_,_,_,_,_,_) = sense_id
+            get_sense_id (sense_id,_,_,_,_,_,_,_) = sense_id
 
-    pairProb g x@(sense_id,lemma1,lemma2,c,d,crank,drank,cls) = 
+    pairProb g x@(sense_id,lemma1,lemma2,c,d,crank,drank,cls) =
       let (prob,g') = randomR (0.0,1.0::Double) g
       in (g',(lemma1,lemma2,prob))
-      
+
     descProb (_,_,p1) (_,_,p2) = compare p2 p1
 
     pick ids []                  = []
@@ -284,7 +285,7 @@ alignmentChoice e2f ps =
   let (xs,ys) = takeSynset ps
       xs'     = map pairProb xs
       sel     = pick ([],[]) (sortBy descProb xs')
-  in if null xs 
+  in if null xs
        then []
        else map (annotate sel) xs ++ alignmentChoice e2f ys
   where
@@ -293,9 +294,9 @@ alignmentChoice e2f ps =
                             (ps1,ps2) = break (\p1 -> get_sense_id p1 /= sense_id) ps
                         in (p : ps1, ps2)
       where
-	    get_sense_id (sense_id,_,_,_,_,_,_,_) = sense_id
+            get_sense_id (sense_id,_,_,_,_,_,_,_) = sense_id
 
-    pairProb x@(sense_id,lemma1,lemma2,c,d,crank,drank,cls) = 
+    pairProb x@(sense_id,lemma1,lemma2,c,d,crank,drank,cls) =
       let prob = fromMaybe 0 (Map.lookup (lemma1++"|"++[sense_id!!9],lemma2++"|"++[sense_id!!9]) e2f)
       in (lemma1,lemma2,prob)
 
