@@ -231,7 +231,14 @@ classify tbl ps =
       where
             get_sense_id (sense_id,_,_,_,_,_,_,_) = sense_id
 
-    pairProb x@(sense_id,lemma1,lemma2,c,d,crank,drank,cls) = (lemma1,lemma2,tbl !! (crank-1) !! (drank-1))
+    pairProb x@(sense_id,lemma1,lemma2,c,d,crank,drank,cls) =
+      let prob | length tbl  < crank = 0
+               | length line < drank = 0
+               | otherwise           = prob
+           where
+             line = tbl  !! (crank-1)
+             prob = line !! (drank-1)
+     in (lemma1,lemma2,prob)
 
     descProb (_,_,p1) (_,_,p2) = compare p2 p1
 
