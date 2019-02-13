@@ -1,8 +1,8 @@
 -- -- # -path=.:../chunk:alltenses:../gflibsrc/german
 ---- edited by SS till cold_A and some in the 100 underneath
 
-concrete DictionaryGer of Dictionary = CatGer ** 
-  open 
+concrete DictionaryGer of Dictionary = CatGer **
+  open
     ParadigmsGer, (S = SyntaxGer), (L = LexiconGer),
     (R = ResGer), (M = MorphoGer), (MS = MakeStructuralGer), (I = IrregGer), (N = NounGer), Prelude in {
 
@@ -38338,7 +38338,8 @@ lin nuneaton_PN = mkPN "Nuneaton" ; -- src=geonames status=guess
 lin nunnery_N = mkN "Nonnenkloster" "Nonnenklöster" neuter ; -- status=guess
 lin nuptial_A = mkA "hochzeitlich" ; -- status=guess
 lin nurenburg_PN = mkPN "Nurenburg" ; -- src=eng status=guess
-lin nurse_N = mkN "Schwester" "Schwestern" feminine | mkN "Krankenschwester" "Krankenschwestern" feminine | mkN "Pflegerin" feminine | mkN "Krankenpflegerin" "Krankenpflegerinnen" feminine | mkN "Pfleger" masculine | mkN "Krankenpfleger" "Krankenpfleger" masculine ; -- status=guess status=guess status=guess status=guess status=guess status=guess
+lin nurseFem_N = mkN "Pflegerin" feminine | mkN "Krankenpflegerin" "Krankenpflegerinnen" feminine | mkN "Krankenschwester" "Krankenschwestern" feminine ;  -- status=guess
+lin nurseMasc_N = mkN "Pfleger" masculine | mkN "Krankenpfleger" "Krankenpfleger" masculine ; -- status=guess
 lin nurse_V2 = mkV2 (regV "stillen") ; -- status=guess, src=wikt
 lin nurseling_N = variants {} ;
 lin nursemaid_N = variants {} ;

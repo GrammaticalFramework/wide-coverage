@@ -1,10 +1,10 @@
 --# -path=.:../basque
 
-concrete DictionaryEus of Dictionary = CatEus ** open 
- ParadigmsEus, AditzTrinkoak, ResEus, 
+concrete DictionaryEus of Dictionary = CatEus ** open
+ ParadigmsEus, AditzTrinkoak, ResEus,
  (L=LexiconEus), (S=StructuralEus), Prelude in {
 
--- SECTION: Conjunctions 
+-- SECTION: Conjunctions
 
 lin and_Conj = S.and_Conj ;
 lin or_Conj = S.or_Conj ;
@@ -15,7 +15,7 @@ lin but_Conj = mkConj "baina" [] sg ;
 {-
     NOTE: The "-ko" suffix is taken care of in ExtraEus.gf,
       as this is not a postposition but better a derivational
-      suffix that can apply to whole NPs 
+      suffix that can apply to whole NPs
 -}
 
 lin in_Prep = S.in_Prep ;
@@ -28,7 +28,7 @@ lin for_Prep = S.for_Prep ;
 lin because_of_Prep = affixPrep "gatik" genitive ;
 lin towards_Prep = locPrep "antz" ;
 
-lin without_Prep = mkPrep "gabe" partitive | mkPrep "gabe" absolutive ; 
+lin without_Prep = mkPrep "gabe" partitive | mkPrep "gabe" absolutive ;
 lin against_Prep = mkPrep "kontra" ;
 lin in_favour_of_Prep = mkPrep "alde" ;
 
@@ -267,7 +267,7 @@ lin banner_N = mkN "pankarta" ;
 lin baptism_N = mkN "bataio" ;
 lin barbarian_N = mkN "barbaro" ;
 lin bargain_N = mkN "negozio" ;
-lin bark_N = mkN "azal" ; -- FIXME: ladrido 
+lin bark_N = mkN "azal" ; -- FIXME: ladrido
 lin barrack_N = mkN "barraka" ;
 lin barracks_N = mkN "kuartel" ;
 lin barrel_N = mkN "upel" ;
@@ -395,7 +395,7 @@ lin bronze_N = mkN "brontze" ;
 lin brook_N = mkN "erreka" ;
 lin broom_N = mkN "erratz" ;
 lin brothel_N = mkN "putetxe" ;
-lin brother_N = mkN "anai" | mkN "anaia" ; -- FIXME: Depends on gender of 'possessor' 
+lin brother_N = mkN "anai" | mkN "anaia" ; -- FIXME: Depends on gender of 'possessor'
 lin browser_N = mkN "nabigatzaile" ;
 lin bruise_N = mkN "ubeldura" ;
 lin bubble_N = mkN "burbuila" ;
@@ -1667,7 +1667,7 @@ lin investment_N = mkN "alderanzketa" ;
 lin invitation_N = mkN "gonbidapen" ;
 lin invoice_N = mkN "faktura" ;
 lin ire_N = mkN "amorru" ;
-lin iron_N = mkN "burdina" | mkN "plantxa" ; -- FIXME: Check 
+lin iron_N = mkN "burdina" | mkN "plantxa" ; -- FIXME: Check
 lin irony_N = mkN "ironia" ;
 lin irradiation_N = mkN "irradiazio" ;
 lin irregularity_N = mkN "irregulartasun" ;
@@ -1912,7 +1912,7 @@ lin media_N = mkN "hedabide" | mkN "komunikabide" ;
 lin median_N = mkN "mediana" ;
 lin medicine_N = mkN "medikuntza" | mkN "sendagai" ;
 lin medium_N = mkN "erdi" ;
-lin meeting_N = mkN "batzar" | mkN "bilera" | mkN "bilketa" | mkN "bilkura" | mkN "biltzar" ; 
+lin meeting_N = mkN "batzar" | mkN "bilera" | mkN "bilketa" | mkN "bilkura" | mkN "biltzar" ;
 lin melancholy_N = mkN "melankolia" ;
 lin melange_N = mkN "nahaste" ;
 lin melody_N = mkN "melodia" ;
@@ -2093,7 +2093,8 @@ lin nucleus_N = mkN "nukleo" ;
 lin nuisance_N = mkN "destorbu" ;
 lin number_N = mkN "zenbaki" ;
 lin nun_N = mkN "moja" ;
-lin nurse_N = mkN "erizain" ;
+lin nurseFem_N = mkN "erizain" ;
+lin nurseMasc_N = mkN "erizain" ;
 lin nursery_N = mkN "haurtzaindegi" ;
 lin nutrition_N = mkN "elikadura" ;
 lin oak_N = mkN "haritz" ;
@@ -2382,7 +2383,7 @@ lin pretext_N = mkN "desenkusa" ;
 lin prevention_N = mkN "prebentzio" ;
 lin price_N = mkN "prezio" | mkN "salneurri" ;
 lin pride_N = mkN "hantuste" ;
-lin priest_N = mkN "apaiz" | mkN "artzain" ; -- FIXME: split 
+lin priest_N = mkN "apaiz" | mkN "artzain" ; -- FIXME: split
 lin prince_N = mkN "printze" ;
 lin princess_N = mkN "printzesa" ;
 lin principality_N = mkN "printzerri" ;
@@ -2819,7 +2820,7 @@ lin sin_N = mkN "bekatu" ;
 lin sinner_N = mkN "bekatari" ;
 lin siren_N = mkN "sirena" ;
 lin sir_N = mkN "jaun" ;
-lin sister_N = mkN "aizpa" | mkN "arreba" ; -- FIXME: Depends on gender of 'possessor' 
+lin sister_N = mkN "aizpa" | mkN "arreba" ; -- FIXME: Depends on gender of 'possessor'
 lin site_N = mkN "leku" ;
 lin situation_N = mkN "kinka" ;
 lin size_N = mkN "hein" | mkN "tamaina" ;
@@ -3046,7 +3047,7 @@ lin taste_N = mkN "gustu" ;
 lin taxation_N = mkN "zerga" ;
 lin taxi_N = mkN "taxi" ;
 lin tax_N = mkN "zerga" ;
-lin teacher_N = mkN "irakasle" ; 
+lin teacher_N = mkN "irakasle" ;
 lin teaching_N = mkN "irakaskuntza" ;
 lin team_N = mkN "barne-zola" ;
 lin tea_N = mkN "te" ;
@@ -3104,7 +3105,7 @@ lin tide_N = mkN "marea" ;
 lin tie_N = mkN "berdinketa" | mkN "gorbata" ;
 lin tiff_N = mkN "liskar" ;
 lin tile_N = mkN "azulejo" ;
-lin time_N = mkN "denbora" ; 
+lin time_N = mkN "denbora" ;
 lin timetable_N = mkN "ordutegi" ;
 lin tinker_N = mkN "ijito" ;
 lin tin_N = mkN "eztainu" | mkN "lata" ;
@@ -3263,7 +3264,7 @@ lin verb_N = mkN "aditz" | mkN "hitz" ;
 lin version_N = mkN "bertsio" ;
 lin verve_N = mkN "kemen" ;
 lin vessel_N = mkN "itsasontzi" ;
-lin veteran_N = mkN "beterano" ; 
+lin veteran_N = mkN "beterano" ;
 lin veto_N = mkN "beto" ;
 lin vibration_N = mkN "dardara" ;
 lin vice_N = mkN "bizio" ;
@@ -3361,7 +3362,7 @@ lin wit_N = mkN "argitasun" ;
 lin witness_N = mkN "lekuko" ;
 lin wolf_N = mkN "otso" ;
 lin woman_N = mkN "emakume" | mkN "emakume" | mkN "emakumezko" ;
-lin wood_N = mkN "zur" | mkN "baso" ; -- FIXME: leña, bosque 
+lin wood_N = mkN "zur" | mkN "baso" ; -- FIXME: leña, bosque
 lin wool_N = mkN "artile" ;
 lin word_N = mkN "ele" | mkN "hitz" ;
 lin worker_N = mkN "behargin" | mkN "langile" ;
@@ -3388,42 +3389,42 @@ lin zeal_N = mkN "zelo" ;
 lin zero_N = mkN "zero" ;
 lin zone_N = mkN "zona" ;
 
-lin allusion_N = mkN "zeharkakoaipamen" ; 
-lin beech_N = mkN "pagadi" ; 
-lin coca_N = mkN "koka-landare" ; 
-lin cotton_plant_N = mkN "kotoi-landare" ; 
-lin digestive_N = mkN "digestio-aparatu" ; 
-lin driving_N = mkN "gidabaimen" ; 
-lin etcetera_N = mkN "etaabar" ; 
-lin excavator_N = mkN "hondeatzekomakina" ; 
-lin fan_belt_N = mkN "aireztatzeuhal" ; 
-lin hand_grenade_N = mkN "esku-bonba" ; 
-lin ice_cream_N = mkN "izozki-denda" ; 
-lin impatience_N = mkN "pairamenikez" ; 
-lin implication_N = mkN "nahasiaegote" ; 
-lin involvement_N = mkN "nahasiaegote" ; 
-lin latex_N = mkN "latex-alergia" ; 
-lin laundry_N = mkN "latsarri" ; 
-lin living_room_N = mkN "areto" ; 
-lin mailing_list_N = mkN "posta-zerrenda" ; 
-lin napalm_N = mkN "napalm-ezkobonba" ; 
-lin patron_N = mkN "patroi" ; 
--- lin plenty_NP = mkN "ugaritasun" ; 
-lin ring_finger_N = mkN "hatznagi" ; 
-lin royal_N = mkN "errege-bide" ; 
-lin sea_level_N = mkN "itsas-maila" ; 
-lin skipping_rope_N = mkN "sokasalto" ; 
-lin smoke_bomb_N = mkN "ke-bonba" ; 
-lin stare_N = mkN "adi-adibegiratu" ; 
-lin starting_point_N = mkN "abiapuntu" ; 
-lin steering_N = mkN "bolante" ; 
-lin steering_wheel_N = mkN "bolante" ; 
-lin swimming_pool_N = mkN "igerileku" ; 
-lin time_bomb_N = mkN "erloju-bonba" ; 
-lin vice_president_N = mkN "lehendakariorde" ; 
-lin wash_house_N = mkN "latsarri" ; 
-lin webpage_N = mkN "weborri" ; 
-lin working_N = mkN "astegun" ; 
+lin allusion_N = mkN "zeharkakoaipamen" ;
+lin beech_N = mkN "pagadi" ;
+lin coca_N = mkN "koka-landare" ;
+lin cotton_plant_N = mkN "kotoi-landare" ;
+lin digestive_N = mkN "digestio-aparatu" ;
+lin driving_N = mkN "gidabaimen" ;
+lin etcetera_N = mkN "etaabar" ;
+lin excavator_N = mkN "hondeatzekomakina" ;
+lin fan_belt_N = mkN "aireztatzeuhal" ;
+lin hand_grenade_N = mkN "esku-bonba" ;
+lin ice_cream_N = mkN "izozki-denda" ;
+lin impatience_N = mkN "pairamenikez" ;
+lin implication_N = mkN "nahasiaegote" ;
+lin involvement_N = mkN "nahasiaegote" ;
+lin latex_N = mkN "latex-alergia" ;
+lin laundry_N = mkN "latsarri" ;
+lin living_room_N = mkN "areto" ;
+lin mailing_list_N = mkN "posta-zerrenda" ;
+lin napalm_N = mkN "napalm-ezkobonba" ;
+lin patron_N = mkN "patroi" ;
+-- lin plenty_NP = mkN "ugaritasun" ;
+lin ring_finger_N = mkN "hatznagi" ;
+lin royal_N = mkN "errege-bide" ;
+lin sea_level_N = mkN "itsas-maila" ;
+lin skipping_rope_N = mkN "sokasalto" ;
+lin smoke_bomb_N = mkN "ke-bonba" ;
+lin stare_N = mkN "adi-adibegiratu" ;
+lin starting_point_N = mkN "abiapuntu" ;
+lin steering_N = mkN "bolante" ;
+lin steering_wheel_N = mkN "bolante" ;
+lin swimming_pool_N = mkN "igerileku" ;
+lin time_bomb_N = mkN "erloju-bonba" ;
+lin vice_president_N = mkN "lehendakariorde" ;
+lin wash_house_N = mkN "latsarri" ;
+lin webpage_N = mkN "weborri" ;
+lin working_N = mkN "astegun" ;
 
 lin abacus_N = mkN "abako" ;
 lin abbess_N = mkN "abadesa" ;
@@ -4415,7 +4416,7 @@ lin zombie_N = mkN "zonbi" ;
 lin james_PN = mkPN "James" ; -- FIXME: masc
 lin mary_PN = mkPN "Miren" ; -- FIXME: fem
 
-lin bilbao_PN = mkPN "Bilbo" ; 
+lin bilbao_PN = mkPN "Bilbo" ;
 
 
 lin aachen_PN = mkPN "Akisgran" ;
@@ -5349,7 +5350,7 @@ lin senegal_PN = mkPN "Senegal" ;
 lin seoul_PN = mkPN "Seul" ;
 lin sevilla_PN = mkPN "Sevilla" ;
 lin seville_PN = mkPN "Sevilla" ;
-lin seychelles_PN = mkPN "Seychelleak" ; -- Should probably be NP 
+lin seychelles_PN = mkPN "Seychelleak" ; -- Should probably be NP
 lin shanghai_PN = mkPN "Shanghai" ;
 lin sheffield_PN = mkPN "Sheffield" ;
 lin shetland_PN = mkPN "Shetlandak" ;
@@ -5483,7 +5484,7 @@ lin uk_PN = mkPN "Erresuma Batua" ;
 lin ukraine_PN = mkPN "Ukraina" ;
 lin ulster_PN = mkPN "Ulster" ;
 lin unesco_PN = mkPN "UNESCO" ;
-lin unicef_PN = mkPN "HLNBF" ; -- Haurren Laguntzarako Nazio Batuen Funtsa" 
+lin unicef_PN = mkPN "HLNBF" ; -- Haurren Laguntzarako Nazio Batuen Funtsa"
 lin uranus_PN = mkPN "Urano (planeta)" ;
 lin uruguay_PN = mkPN "Uruguai" ;
 lin urumchi_PN = mkPN "Ürümqi" ;
@@ -6376,7 +6377,7 @@ lin great_A = mkA "handi" | mkA "handiago" ;
 lin greedy_A = mkA "tripazain" ;
 lin greek_A = mkA "greko" | mkA "greziar" ;
 lin green_A = mkA "berde" ;
-lin green_A = mkA "berde" ; 
+lin green_A = mkA "berde" ;
 lin grey_A = mkA "gris" ;
 lin grievous_A = mkA "larri" ;
 lin grim_A = mkA "gogor" ;
@@ -7942,18 +7943,18 @@ lin zonal_A = mkA "zona" ;
 lin zoological_A = mkA "zoologiko" ;
 
 lin accessible_A = mkA "sartzenerraz" ; -- <izo>
-lin airborne_A = mkA "airezgarraiatu" ; -- 
-lin ambitious_A = mkA "anbiziohandiko" ; -- 
+lin airborne_A = mkA "airezgarraiatu" ; --
+lin ambitious_A = mkA "anbiziohandiko" ; --
 lin approachable_A = mkA "sartzenerraz" ; -- <izo>
-lin contingent_A = mkA "gertadaitekeen" ; -- 
+lin contingent_A = mkA "gertadaitekeen" ; --
 lin delectable_A = mkA "osogozo" ; -- <izo>
 lin diabolic_A = mkA "osotxar" ; -- <izo>
 lin diabolical_A = mkA "osotxar" ; -- <izo>
-lin enormous_A = mkA "osohandi" ; -- 
+lin enormous_A = mkA "osohandi" ; --
 lin fabulous_A = mkA "osoon" ; -- <izo>
-lin flawless_A = mkA "akatsikgabe" ; -- 
+lin flawless_A = mkA "akatsikgabe" ; --
 lin fruitless_A = mkA "fruiturikgabe" ; -- <izo>
-lin glacial_A = mkA "izugarrihotz" ; -- 
+lin glacial_A = mkA "izugarrihotz" ; --
 lin groundless_A = mkA "oinarrigabe" ; -- <izo>
 lin hackneyed_A = mkA "osoezagun" ; -- <izo>
 lin harmless_A = mkA "ezkaltegarri" ; -- <izo>
@@ -7968,46 +7969,46 @@ lin ineffective_A = mkA "ezeraginkor" ; -- <izo>
 lin inexperienced_A = mkA "trebetasunikgabe" ; -- <izo>
 lin insecure_A = mkA "ezseguru" ; -- <izo>
 lin insubstantial_A = mkA "sendotasunikgabe" ; -- <izo>
-lin likely_A = mkA "gertadaitekeen" ; -- 
+lin likely_A = mkA "gertadaitekeen" ; --
 lin lousy_A = mkA "osokaskar" ; -- <izo>
 lin luscious_A = mkA "izugarrigozo" ; -- <izo>
-lin mediaeval_A = mkA "erdiAroko" ; -- 
+lin mediaeval_A = mkA "erdiAroko" ; --
 lin newborn_A = mkA "jaioberri" ; -- <izo>
 lin oblivious_A = mkA "ezkontziente" ; -- <izo>
-lin patient_A = mkA "eramanhandiko" ; -- 
-lin predictable_A = mkA "aurreikusdaitekeen" ; -- 
-lin probable_A = mkA "gertadaitekeen" ; -- 
-lin prospective_A = mkA "gertadaitekeen" ; -- 
+lin patient_A = mkA "eramanhandiko" ; --
+lin predictable_A = mkA "aurreikusdaitekeen" ; --
+lin probable_A = mkA "gertadaitekeen" ; --
+lin prospective_A = mkA "gertadaitekeen" ; --
 lin sleepless_A = mkA "lorikegingabe" ; -- <izo>
 lin stuffy_A = mkA "aireztatugabe" ; -- <izo>
--- lin subject_A2 = mkA2 "lotu" ; -- 
-lin tremendous_A = mkA "osohandi" ; -- 
-lin trivial_A = mkA "garrantzirikgabeko" ; -- 
-lin unaffected_A = mkA "aldatugabe" ; -- 
-lin unchanged_A = mkA "aldatugabe" ; -- 
+-- lin subject_A2 = mkA2 "lotu" ; --
+lin tremendous_A = mkA "osohandi" ; --
+lin trivial_A = mkA "garrantzirikgabeko" ; --
+lin unaffected_A = mkA "aldatugabe" ; --
+lin unchanged_A = mkA "aldatugabe" ; --
 lin unchecked_A = mkA "kontrolikgabe" ; -- <izo>
 lin unclear_A = mkA "ezgarbi" ; -- <izo>
 lin unconscious_A = mkA "konorterikgabe" ; -- <izo>
-lin undoubted_A = mkA "zalantzarikgabe" ; -- 
+lin undoubted_A = mkA "zalantzarikgabe" ; --
 lin unfailing_A = mkA "hutsikgabe" ; -- <izo>
 lin unfounded_A = mkA "oinarrigabe" ; -- <izo>
 lin unhurt_A = mkA "zauririkgabe" ; -- <izo>
 lin unleaded_A = mkA "berunikgabe" ; -- <izo>
-lin unnecessary_A = mkA "ezbeharrezko" ; -- 
-lin unprecedented_A = mkA "aurrekaririkgabe" ; -- 
+lin unnecessary_A = mkA "ezbeharrezko" ; --
+lin unprecedented_A = mkA "aurrekaririkgabe" ; --
 lin unruly_A = mkA "diziplinarikgabe" ; -- <izo>
 lin unsafe_A = mkA "ezseguru" ; -- <izo>
 lin unscathed_A = mkA "zauririkgabe" ; -- <izo>
 lin unscrupulous_A = mkA "eskrupulurikgabe" ; -- <izo>
-lin unsure_A = mkA "ezseguru" ; -- 
+lin unsure_A = mkA "ezseguru" ; --
 lin untapped_A = mkA "ustiatugabe" ; -- <izo>
-lin unusual_A = mkA "ohiezbezalako" ; -- 
+lin unusual_A = mkA "ohiezbezalako" ; --
 lin unwieldy_A = mkA "astunetaerabiltzekozail" ; -- <izo>
 lin unwilling_A = mkA "ezprest" ; -- <izo>
 lin unwritten_A = mkA "idatzigabe" ; -- <izo>
 
 
--- SECTION: Adverbs 
+-- SECTION: Adverbs
 
 lin where_IAdv = { s = "non" } ;
 lin how_IAdv = { s = "nola" } ;
@@ -8017,11 +8018,11 @@ lin why_IAdv = { s = "zergatik" } ;
 lin very_AdA = mkAdA "oso" ;
 
 lin now_AdV = mkAdV "orain" ;
-lin again_AdV = mkAdV "berriz" ; 
-lin too_AdV = mkAdV "ere" ; 
-lin also_AdV = mkAdV "ere" ; 
+lin again_AdV = mkAdV "berriz" ;
+lin too_AdV = mkAdV "ere" ;
+lin also_AdV = mkAdV "ere" ;
 lin still_AdV = mkAdV "oraindik" ;
-lin never_AdV = mkAdV "inoiz" ; 
+lin never_AdV = mkAdV "inoiz" ;
 
 -- SECTION: Verbs
 
@@ -8049,7 +8050,7 @@ lin pay_V3  = mkV3 "igorri" ;
  lin become_VA = mkVA "bihurtu" | mkVA "gertatu" ;
  lin beg_V2V = mkV2V "erregutu" ; --  mkV2V "eske_ibili" ;
  lin break_V2 = mkV2 "eten" | mkV2 "hautsi" | mkV2 "hondatu" | mkV2 "izorratu" ;
- lin burn_V = mkV "erre" | mkV "kiskali" ; -- mkV "su eman" 
+ lin burn_V = mkV "erre" | mkV "kiskali" ; -- mkV "su eman"
  lin close_V2 = mkV2 "gerturatu" | mkV2 "itxi" | mkV2 "zarratu" ;
  lin count_V2 = mkV2 "kontatu" | mkV2 "zenbatu" ;
  lin cut_V2 = mkV2 "ebaki" | mkV2 "moztu" ;
@@ -8139,7 +8140,7 @@ oper   egin_V : V = mkV "egin" ;
 -- lin love_V2 = mkV2 "nahi8izan<per>" ;
 -- lin stand_V = mkV "ari8izan<per>" ;
 
--- SECTION: Aditz trinkoak 
+-- SECTION: Aditz trinkoak
 
 -- lin buy_V2 = mkV2 "erosi" ;
 -- lin buy_V2 = mkV2 "erosi<sint>" ;

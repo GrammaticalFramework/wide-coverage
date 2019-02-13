@@ -4478,8 +4478,8 @@ lin back_out_of_V2 = dirV2 (partV (mkV "backar")"ur") ; -- comment=15
 lin back_out_of_V3 = variants {} ; -- status=guess
 lin back_to_Prep = mkPrep "tillbaka till" ;
 lin back_up_V = mkV "backar" ; -- comment=10
-lin back_up_1_V2 = dirV2 (partV (mkV "backar") "upp") ; 
-lin back_up_2_V2 = dirV2 (partV (mkV "backar") "upp") ; 
+lin back_up_1_V2 = dirV2 (partV (mkV "backar") "upp") ;
+lin back_up_2_V2 = dirV2 (partV (mkV "backar") "upp") ;
 lin backache_N = mkN "ryggvärk" ; -- src=google
 lin backband_N = mkN "nackband" ; -- src=google
 lin backbeat_N = mkN "baktakt" ; -- src=google
@@ -15635,7 +15635,7 @@ lin destine_V2V = variants {} ; -- status=guess
 lin destiny_N = mkN "öde" ; -- comment=3
 lin destitute_A = mkA "utfattig" ; -- comment=3
 lin destitution_N = mkN "armod" neutrum | mkN "nöd" ; -- SaldoWN -- comment=4
-lin destroy_V2 = mkV2 (mkV "förstör" "förstörde" "förstört") ; 
+lin destroy_V2 = mkV2 (mkV "förstör" "förstörde" "förstört") ;
 lin destroyable_A = variants {} ; -- status=guess
 lin destroyer_N = mkN "förstörare" utrum ; -- comment=2
 lin destructibility_N = variants {} ; -- status=guess
@@ -38124,7 +38124,8 @@ lin nuneaton_PN = mkPN "Nuneaton" neutrum ; -- src=geonames status=guess
 lin nunnery_N = variants {} ; -- status=guess
 lin nuptial_A = variants {} ; -- status=guess
 lin nurenburg_PN = mkPN "Nurenburg" ; -- src=eng status=guess
-lin nurse_N = mkN "sjuksköterska" ; -- SaldoWN
+lin nurseFem_N = mkN "sjuksköterska" ; -- SaldoWN
+lin nurseMasc_N = mkN "sjuksköterska" ; -- SaldoWN
 lin nurse_V2 = dirV2 (partV (mkV "sparar")"in") ; -- status=guess
 lin nurseling_N = variants {} ; -- status=guess
 lin nursemaid_N = mkN "barnflicka" | (mkN "barnflicka") | mkN "barnpassare" ; -- SaldoWN -- status=guess status=guess

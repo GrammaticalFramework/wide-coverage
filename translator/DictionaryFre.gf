@@ -1,6 +1,6 @@
 ---- checked by AR till drive_V in the BNC order
 
-concrete DictionaryFre of Dictionary = CatFre ** open 
+concrete DictionaryFre of Dictionary = CatFre ** open
   ParadigmsFre,
   (P = ParadigmsFre),
   (S = SyntaxFre),
@@ -11,7 +11,7 @@ concrete DictionaryFre of Dictionary = CatFre ** open
   (Ph = PhonoFre),
   (R = ResFre),
   (M = MakeStructuralFre),
-  MorphoFre, 
+  MorphoFre,
   Prelude in {
 
 oper
@@ -20461,7 +20461,8 @@ lin nun_N = mkN "nonne" feminine ; -- tocheck
 lin nuncio_N = mkN "nonce" masculine ; -- tocheck
 lin nuneaton_PN = mkPN "Nuneaton" ; -- status=guess src=geonames
 lin nuptial_A = mkA "nuptial" ; -- tocheck
-lin nurse_N = mkN "infirmière" feminine | mkN "nourrice" feminine ; -- tocheck
+lin nurseFem_N = mkN "infirmière" feminine ;
+lin nurseMasc_N = mkN "infirmier" masculine ;
 lin nurse_V2 = mkV2 (mkV "allaiter") | mkV2 (mkV "soigner") ; -- tocheck
 lin nursemaid_N = mkN "nounou" feminine ; -- tocheck
 lin nursery_N = mkN "crèche" feminine | mkN "pépinière" masculine ; -- tocheck
