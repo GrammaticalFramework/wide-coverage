@@ -1,12 +1,12 @@
 concrete DictionaryIta of Dictionary = CatIta
-** open ParadigmsIta, (P = ParadigmsIta), 
+** open ParadigmsIta, (P = ParadigmsIta),
         IrregIta, (I=IrregIta), MorphoIta, (L=LexiconIta), (S=SyntaxIta), (E=ExtraIta), (R = ResIta), Prelude in {
 
 oper mkInterj : Str -> Interj
 = \s -> lin Interj (ss s) ;
 oper mkDet = overload {
   mkDet : Str -> Det = \s -> lin Det {s,sp = \\_,c => prepCase c ++ s ; n = Sg ; s2 = [] ; isNeg = False} ;
-  mkDet : Str -> Str -> Number -> Det = 
+  mkDet : Str -> Str -> Number -> Det =
      \s,t,n -> lin Det {s,sp = \\g,c => prepCase c ++ genForms s t ! g ; n = n ; s2 = [] ; isNeg = False} ;
      } ;
 oper mkConj : Str -> Conj
@@ -18273,7 +18273,8 @@ lin nun_N = mkN "suora" | mkN "monaca" ; -- status=guess status=guess
 lin nuncio_N = mkN "nunzio" ; -- UWN
 lin nuneaton_PN = mkPN "Nuneaton" ; -- status=guess src=geonames
 lin nuptial_A = mkA "nuziale" ; -- status=guess
-lin nurse_N = mkN "infermiere" | mkN "infermiera" ; -- status=guess status=guess
+lin nurseMasc_Ns_N = mkN "infermiere" ;
+lin nurseFem_N = mkN "infermiera" ;
 lin nurse_V2 = variants {} ; --
 lin nurseling_N = mkN "lattante" ; -- UWN
 lin nursemaid_N = mkN "bambinaia" | mkN "babysitter" | mkN "tata" ; -- status=guess status=guess status=guess
@@ -29914,7 +29915,7 @@ oper OP_above_Prep : Prep = S.above_Prep ;
 oper OP_behind_Prep : Prep = S.behind_Prep ;
 oper OP_past_Prep : Prep = variants {} ; --
 oper OP_without_Prep : Prep = S.without_Prep ;
-oper OP_toward_Prep : Prep = mkPrep "verso" ; 
+oper OP_toward_Prep : Prep = mkPrep "verso" ;
 oper OP_up_Adv : Adv = mkAdv "su" ;
 oper OP_in_Adv : Adv = mkAdv "dentro" ;
 oper OP_on_Adv : Adv = mkAdv "carponi" | mkAdv "a quattro piedi" ; -- status=guess status=guess

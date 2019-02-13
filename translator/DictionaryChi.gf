@@ -8,7 +8,7 @@ flags coding=utf8 ;
 
 oper mkNPword : Str -> NP = \s -> lin NP (ss (R.word s)) ; -- to be used in lexicon building only
 
-oper adjAdv : A -> CatChi.Adv = \a -> lin Adv {s = a.s ; advType = R.ATManner} ;
+oper adjAdv : A -> CatChi.Adv = \a -> lin Adv {s = a.s ; advType = R.ATManner; hasDe = False} ;
 
 oper prepV2 : V -> Prep -> V2 = \v,p -> mkV2 v p ;
 oper advV : V -> Adv -> V = \v,a -> mkV v.s a.s ;
@@ -22794,7 +22794,8 @@ lin nun_N = mkN "尼姑" ;
 lin nuneaton_PN = mkPN "納尼頓" ; -- comment=src=geonames status=guess
 lin nuptial_A = mkA "婚礼" | mkA "结婚" ; -- open-multilingual-wordnet
 lin nurenburg_PN = foreignPN "Nurenburg" ; -- comment=src=eng status=guess
-lin nurse_N = mkN "护士" | {-HSK-} mkN "护士" "個" ;
+lin nurseMasc_N = mkN "护士" | {-HSK-} mkN "护士" "個" ;
+lin nurseFem_N = mkN "护士" | {-HSK-} mkN "护士" "個" ;
 lin nurse_V2 = mkV2 "看护" ;
 lin nursemaid_N = mkN "阿姨" "個" ;
 lin nursery_N = mkN "苗圃" ;
@@ -32177,7 +32178,7 @@ lin swedeFem_N = mkN "瑞典" ;
 lin swedeMasc_N = mkN "瑞典人" ;
 lin sweden_PN = mkPN "瑞典人" ;
 lin swedish_A = mkA "瑞典语" ;
-lin swedishFem_N = mkN "瑞典人" ; 
+lin swedishFem_N = mkN "瑞典人" ;
 lin swedishMasc_N = mkN "瑞典人" ;
 lin sweep_N = mkN "范围" ;
 lin sweep_V = mkV "打扫" ;

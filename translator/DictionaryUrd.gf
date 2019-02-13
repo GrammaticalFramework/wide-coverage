@@ -8,7 +8,7 @@ coding=utf8 ;
 
 -- initializing with StructuralUrd and LexiconUrd
 
--- concrete StructuralUrd of Structural = CatUrd ** 
+-- concrete StructuralUrd of Structural = CatUrd **
 --  open MorphoUrd, ParadigmsUrd, Prelude, NounUrd,ParamX,CommonHindustani in {
 
 lin above_Prep = mkPrep ["کے اوپر"] ["کے اوپر"] ;
@@ -78,8 +78,8 @@ lin there_Adv = mkAdv "وہاں" ;
 lin there7to_Adv = mkAdv ["وہاں پر"] ;
 lin there7from_Adv = mkAdv ["وہاں سے"] ;
 lin therefore_PConj = ss "اس لیے" ;
-lin they_Pron = personalPN "وہ" "وہ" "وہ" ["ان کا"] ["ان کی"] ["ان کے"] ["ان کی"] Pl Masc Pers3_Distant ; ---- 
-lin this_Quant = demoPN "یہ" "اس" "ان";      
+lin they_Pron = personalPN "وہ" "وہ" "وہ" ["ان کا"] ["ان کی"] ["ان کے"] ["ان کی"] Pl Masc Pers3_Distant ; ----
+lin this_Quant = demoPN "یہ" "اس" "ان";
 lin through_Prep = mkPrep ["میں سے"] ["میں سے"] ;
 lin too_AdA = ss "بہت" ;
 lin to_Prep = mkPrep "کو" "کو" ; -- ** {lock_Prep = <>};
@@ -106,14 +106,14 @@ lin yes_Utt = ss "ہاں" ;
 lin youSg_Pron = personalPN "تو" "تو" "تو" "تیرا" "تیری" "تیرے" "تیری" Sg Masc Pers2_Casual ;
 lin youPl_Pron = personalPN "تم" "تم" "تم" "تمھارا" "تمھاری" "تمھارے" "تمھاری" Pl Masc Pers2_Casual ;
 lin youPol_Pron = personalPN "آپ" "آپ" "آپ" ["آپ کا"] ["آپ کی"] ["آپ کے"] ["آپ کی"] Pl Masc Pers2_Respect  ;
-lin no_Quant =  demoPN " کوی نہیں" "کوی نہیں" "کوی نہیں" ; 
+lin no_Quant =  demoPN " کوی نہیں" "کوی نہیں" "کوی نہیں" ;
 lin not_Predet = {s="نہیں"} ;
-lin if_then_Conj = sd2 "اگر" "تو" ** {n = Sg} ; 
+lin if_then_Conj = sd2 "اگر" "تو" ** {n = Sg} ;
 lin at_least_AdN = mkAdN ["کم از کم"] ;
 lin at_most_AdN = mkAdN ["زیادہ سے زیادہ"];
-lin nothing_NP = MassNP (UseN (P.mkN "کوی چیز نہیں" "کوی چیز نہیں" "کوی چیز نہیں" "کوی چیز نہیں" "کوی چیز نہیں" "کوی چیز نہیں" Masc )); 
+lin nothing_NP = MassNP (UseN (P.mkN "کوی چیز نہیں" "کوی چیز نہیں" "کوی چیز نہیں" "کوی چیز نہیں" "کوی چیز نہیں" "کوی چیز نہیں" Masc ));
 lin except_Prep = mkPrep "کے سواے" "کے سواے" ;
-lin nobody_NP = MassNP (UseN (P.mkN "کوی نہیں" "کوی نہیں" "کوی نہیں" "کوی نہیں" "کوی نہیں" "کوی نہیں" Masc ));  
+lin nobody_NP = MassNP (UseN (P.mkN "کوی نہیں" "کوی نہیں" "کوی نہیں" "کوی نہیں" "کوی نہیں" "کوی نہیں" Masc ));
 
 lin as_CAdv = {s = "اتنا" ; p = "جتنا"} ;
 
@@ -121,7 +121,7 @@ lin have_V2 = mkV2 (mkV "رکھنا") "" ;
 
 lin language_title_Utt = ss "اردو" ;
 
---concrete LexiconUrd of Lexicon = CatUrd ** 
+--concrete LexiconUrd of Lexicon = CatUrd **
 --open ResUrd, ParadigmsUrd, Prelude in {
 
 lin airplane_N = P.mkN "جہاز" ;
@@ -166,8 +166,8 @@ lin child_N = P.mkN "بچہ" ;
 lin church_N = mkCmpdNoun "گرجا" (P.mkN "گھر") ;
 lin city_N = P.mkN "شہر"  ;
 lin clean_A = mkA "صاف" ;
-lin clever_A = mkA "ہوشیار" ;  
-lin close_V2 =  mkV2 (compoundV "بند" do_V2); 
+lin clever_A = mkA "ہوشیار" ;
+lin close_V2 =  mkV2 (compoundV "بند" do_V2);
 lin coat_N = P.mkN "کوٹ" ;
 lin cold_A = mkA "ٹھنڈا" ;
 lin come_V = mkV "آنا" ;
@@ -233,7 +233,7 @@ lin long_A = mkA "لمبا" ;
 lin lose_V2 = mkV2 (compoundV "کھو" do_V2) ;
 lin love_N = P.mkN "محبت" ;
 lin love_V2 = mkV2 (compoundV "پیار" do_V2) "کو";
-lin man_N = P.mkN "آدمی" "آدمی" "آدمی" "آدمی" "آدمیوں" "آدمیو" masculine ; 
+lin man_N = P.mkN "آدمی" "آدمی" "آدمی" "آدمی" "آدمیوں" "آدمیو" masculine ;
 lin married_A2 = mkA "شادی شدہ" "سے" ;
 lin meat_N = P.mkN "گوشت" ;
 lin milk_N = P.mkN "دودھ" ;
@@ -255,7 +255,7 @@ lin pen_N = P.mkN "پنسل" ;
 lin planet_N = P.mkN "سیارہ" ;
 lin plastic_N = P.mkN "پلاسٹک" ;
 lin play_V2 = mkV2 (mkV "کھیلنا") ;
-lin policeman_N = mkCmpdNoun "پولیس" (P.mkN "والا") ; 
+lin policeman_N = mkCmpdNoun "پولیس" (P.mkN "والا") ;
 lin priest_N = (P.mkN "پیغمبر") ;
 --  probable_AS = mkAS (regA "پr?بابلع") ;
 lin queen_N = P.mkN "شہزادی" ;
@@ -9397,7 +9397,8 @@ lin nun_N = P.mkN "راہبہ" ;
 lin nuncio_N = P.mkN "پیغامبر" ;
 lin nunnery_N = P.mkN "راہباؤں کی خانقاہ" ;
 lin nuptial_A = mkA "ازدواجی" ;
-lin nurse_N = P.mkN "آیا" ;
+lin nurseFem_N = P.mkN "آیا" ;
+lin nurseMasc_N = P.mkN "آیا" ;
 lin nurse_V2 = mkV2 (compoundV "بچپن میں کھلانا پلانا یا دیکھ بھال" (mkV "کرنا")) ;
 lin nurseling_N = P.mkN "بچہ جس کی دیکھ بھال کی جائے" ;
 lin nursery_N = P.mkN "گیہ وارہ" ;

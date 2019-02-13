@@ -14093,7 +14093,8 @@ lin nun_N = mkN "noen" ; -- status=guess
 lin nuncio_N = mkN "nuntius" masculine ; -- status=guess
 lin nuneaton_PN = mkPN "Nuneaton" ; -- src=geonames status=guess
 lin nurenburg_PN = mkPN "Nurenburg" ; -- src=eng status=guess
-lin nurse_N = mkN "verpleegster" feminine ; -- status=guess
+lin nurseFem_N = mkN "verpleegster" feminine ; -- status=guess
+lin nurseMasc_N = mkN "verpleegster" masculine ; -- status=guess
 lin nurse_V2 = mkV2 (mkV "borstvoeden") | mkV2 (mkV "zogen") ; -- status=guess, src=wikt status=guess, src=wikt
 lin nursemaid_N = mkN "kindermeisje" neuter ; -- status=guess
 lin nursery_N = mkN "kleuterschool" | mkN "peuterspeelzaal" ; -- status=guess status=guess

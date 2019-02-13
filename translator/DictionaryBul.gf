@@ -1,6 +1,6 @@
-concrete DictionaryBul of Dictionary = 
-  CatBul 
-    ** open MorphoBul, ResBul, (R=ResBul), (S = StructuralBul), (E = ExtraBul), ParadigmsBul, Prelude in 
+concrete DictionaryBul of Dictionary =
+  CatBul
+    ** open MorphoBul, ResBul, (R=ResBul), (S = StructuralBul), (E = ExtraBul), ParadigmsBul, Prelude in
 {
 flags coding=utf8 ;
 
@@ -38399,7 +38399,8 @@ lin nuneaton_PN = mkPN "Нунеатон" Masc ;
 lin nunnery_N = mkN016 "метох" ;
 lin nuptial_A = variants {mkA079 "брачен"; mkA079 "венчален"; mkA076 "сватбен"} ; ----
 lin nurenburg_PN = mkPN "Нюренберг" Masc ;
-lin nurse_N = variants {compoundN (mkA078 "медицински") (mkN041a "сестра"); mkN041 "санитарка"} ;
+lin nurseMasc_N = variants {compoundN (mkA078 "медицински") (mkN041a "сестра"); mkN041 "санитарка"} ; ----
+lin nurseFem_N = variants {compoundN (mkA078 "медицински") (mkN041a "сестра"); mkN041 "санитарка"} ; ----
 lin nurse_V2 = variants {} ;
 lin nurseling_N = mkN065 "кърмаче" ; ----
 lin nursemaid_N = mkN041 "бона" ; ----
